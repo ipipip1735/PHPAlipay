@@ -14,6 +14,7 @@ class AopClient {
 
 	//网关
 	public $gatewayUrl = "https://openapi.alipay.com/gateway.do";
+
 	//返回数据格式
 	public $format = "json";
 	//api版本
@@ -416,7 +417,7 @@ class AopClient {
 	protected function buildRequestForm($para_temp) {
 		
 		$sHtml = "<form id='alipaysubmit' name='alipaysubmit' action='".$this->gatewayUrl."?charset=".trim($this->postCharset)."' method='POST'>";
-		while (list ($key, $val) = each ($para_temp)) {
+        foreach ($para_temp as $key => $val) {
 			if (false === $this->checkEmpty($val)) {
 				//$val = $this->characet($val, $this->postCharset);
 				$val = str_replace("'","&apos;",$val);
