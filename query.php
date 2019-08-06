@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: Administrator
- * Date: 2019/8/4
- * Time: 23:12
+ * Date: 2019/8/6
+ * Time: 8:06
  */
 
 include_once "AopSdk.php";
@@ -17,21 +17,4 @@ $aop->signType = "RSA2";
 $aop->alipayrsaPublicKey = 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAu0fFgKWgPf1ku6ii8zmYGxwP3d2cYUBU4yBQ9IqARAqx1ObLJ2FJRLNdLJm8B33dHw228c2f67+i/Hxg4tj6GG4PATZ8YLmyJvXAfqkEVIM2RpREz+GPr4FMm9CrX0kGQCt2/MCo8GFxA3XxZGKVmKmR18pX6TH1aFVXkyMGIlxbGudvR02bcJMhJ9s+OHIlytZUavTttpvZJjZ+wTp+u4viNaFpVtbo8A6Gm72izp0AHUy729eFmN51rdNcbxUUGqs7essSyDuT2nkydKypANdTr/vPvFFAyPHp2Rrm0540IAHykyHafXeoZHly/hxGArZ1cfHgvTB1e9JXbsxeVwIDAQAB';
 
 
-$request = new AlipayTradePagePayRequest();
-$request->setNotifyUrl("http://pc.yssp888.com/test.php");
-//$request->setReturnUrl("http://pc.yssp888.com/test.php");
-
-$no = time();
-$bizcontent = <<<EOB
-{
-    "out_trade_no":"$no",
-    "product_code":"FAST_INSTANT_TRADE_PAY",
-    "subject":"XXXX",
-    "total_amount":10.10
-}
-EOB;
-
-echo $bizcontent;
-$request->setBizContent($bizcontent);
-$result = $aop->pageExecute($request);
-echo $result;
+$request = new AlipayTradeQueryRequest();
