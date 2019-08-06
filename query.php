@@ -18,3 +18,14 @@ $aop->alipayrsaPublicKey = 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAu0fFgKWg
 
 
 $request = new AlipayTradeQueryRequest();
+$bizcontent = <<<EOB
+{
+    "out_trade_no":"1565008757",
+    "trade_no":"2019080522001435711000044937"
+}
+EOB;
+$request->setBizContent($bizcontent);
+
+$result = $aop->execute ( $request);
+var_dump($result);
+

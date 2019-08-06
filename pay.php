@@ -30,8 +30,9 @@ $bizcontent = <<<EOB
     "total_amount":10.10
 }
 EOB;
+//echo $bizcontent;
 
-echo $bizcontent;
+
 $request->setBizContent($bizcontent);
 $result = $aop->pageExecute($request);
 echo $result;
