@@ -19,8 +19,6 @@ $aop->signType = $config['signType'];
 $aop->alipayrsaPublicKey = $config['alipayrsaPublicKey'];
 
 
-$request = new AlipayTradeQueryRequest();
-
 $request = new AlipayTradePagePayRequest();
 $request->setNotifyUrl($config['notify_url']);
 //$request->setReturnUrl($config['return_url']);
